@@ -169,7 +169,8 @@ nav a:hover {
 }
 
 .mobile-hero-assets {
-  display: none; /* Hidden on desktop */
+  display: none;
+  /* Hidden on desktop */
 }
 
 /* =========================================
@@ -178,8 +179,10 @@ nav a:hover {
    ========================================= */
 @media screen and (max-width: 768px) {
   .hero-wrapper {
-    background-image: none !important; /* Remove background image */
-    background-color: #FAFAF5; /* Ensure a clean background color */
+    background-image: none !important;
+    /* Remove background image */
+    background-color: #FAFAF5;
+    /* Ensure a clean background color */
     flex-direction: column;
     padding-top: 20px;
     justify-content: flex-start;
@@ -197,32 +200,89 @@ nav a:hover {
   }
 
   .mobile-barista {
-    width: 120px; /* Adjust size as needed */
+    width: 120px;
+    /* Adjust size as needed */
     height: auto;
-    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.1));
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.1));
   }
 
   .mobile-heart {
-    width: 60px; /* Adjust size as needed */
+    width: 60px;
+    /* Adjust size as needed */
     height: auto;
     animation: floatHeart 2s ease-in-out infinite;
-    align-self: flex-start; /* Move heart slightly up */
+    align-self: flex-start;
+    /* Move heart slightly up */
     margin-top: 20px;
   }
 
   @keyframes floatHeart {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
   }
 
   .hero-center-text h1 {
-    font-size: 3rem; /* Properly sized for mobile */
+    font-size: 3rem;
+    /* Properly sized for mobile */
     margin-bottom: 10px;
   }
-  
+
   .hero-center-text p {
-      font-size: 1rem;
-      padding: 0 20px;
+    font-size: 1rem;
+    padding: 0 20px;
+  }
+
+  /* --- Mobile Refinements (Menu & Chatbot) --- */
+
+  /* 2-Column Menu Grid */
+  .menu-grid {
+    grid-template-columns: 1fr 1fr;
+    /* 2 columns */
+    gap: 1rem;
+    /* Smaller gap */
+  }
+
+  /* Smaller Filter Buttons */
+  .filter-btn {
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    border-width: 1.5px;
+  }
+
+  .menu-filters {
+    gap: 6px;
+    /* Tighter spacing for filters */
+  }
+
+  /* Product Card adjustments for 2-col */
+  .menu-card img {
+    height: 140px;
+    /* Reduced height for 2-col layout */
+  }
+
+  .card-info {
+    padding: 0.8rem;
+  }
+
+  .card-info h3 {
+    font-size: 1.1rem;
+  }
+
+  .card-category {
+    font-size: 0.85rem;
+  }
+
+  /* Fix Chatbot Zoom on Input Focus (iOS) */
+  .chat-footer input {
+    font-size: 16px !important;
+    /* Prevents auto-zoom */
   }
 }
 
