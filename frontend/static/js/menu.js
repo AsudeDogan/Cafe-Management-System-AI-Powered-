@@ -7,8 +7,7 @@ function catMatches(p, cat) {
 }
 
 function imgUrl(p) {
-  // DB'den gelen image: "/static/images/uploads/xxx.jpg" gibi
-  // boşsa fallback
+
   if (p.image && p.image.startsWith("/static/")) return p.image;
   if (p.image) return `/static/images/${p.image}`;
   return "/static/images/placeholder.jpg";
@@ -36,7 +35,7 @@ function renderGrid() {
     </div>
   `).join("");
 
-  // click -> open modal
+
   grid.querySelectorAll(".menu-card").forEach(card => {
     card.addEventListener("click", () => {
       const productId = card.dataset.id;

@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // default
+  
   applyFilter("all");
 });
 
@@ -30,7 +30,7 @@ window.openProductModal = function(p) {
   if(!modal) return;
   const closeBtn = document.getElementById("modalClose");
 
-  // Helper for image url
+  
   const getImg = (obj) => {
       if(obj.image && obj.image.startsWith("/static/")) return obj.image;
       if(obj.image) return `/static/images/${obj.image}`;
