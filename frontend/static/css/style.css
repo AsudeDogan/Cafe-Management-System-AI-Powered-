@@ -190,33 +190,22 @@ nav a:hover {
   }
 
   .mobile-hero-assets {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    position: relative;
-    padding: 0 10px;
-    margin-bottom: 10px;
+    display: none;
+    /* Hide old container just in case */
   }
 
-  .mobile-barista {
-    width: 120px;
-    /* Adjust size as needed */
+  /* Mobile Barista Hero Image */
+  .mobile-barista-hero {
+    display: block;
+    width: 240px;
+    /* approx 2x previous size */
     height: auto;
-    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.1));
+    margin-top: 25px;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.15));
+    animation: floatHero 3s ease-in-out infinite;
   }
 
-  .mobile-heart {
-    width: 60px;
-    /* Adjust size as needed */
-    height: auto;
-    animation: floatHeart 2s ease-in-out infinite;
-    align-self: flex-start;
-    /* Move heart slightly up */
-    margin-top: 20px;
-  }
-
-  @keyframes floatHeart {
+  @keyframes floatHero {
 
     0%,
     100% {
@@ -224,7 +213,7 @@ nav a:hover {
     }
 
     50% {
-      transform: translateY(-10px);
+      transform: translateY(-8px);
     }
   }
 
@@ -251,14 +240,30 @@ nav a:hover {
 
   /* Smaller Filter Buttons */
   .filter-btn {
-    padding: 6px 14px;
-    font-size: 0.85rem;
+    padding: 5px 10px;
+    /* Reduced padding */
+    font-size: 0.75rem;
+    /* Reduced font size */
     border-width: 1.5px;
+    white-space: nowrap;
+    /* Prevent text wrapping */
   }
 
+  /* Single Line Menu Filters with Scroll */
   .menu-filters {
-    gap: 6px;
-    /* Tighter spacing for filters */
+    display: flex;
+    flex-wrap: nowrap;
+    /* Force single line */
+    overflow-x: auto;
+    /* Allow horizontal scroll if needed */
+    gap: 5px;
+    /* Tighter spacing */
+    padding-bottom: 5px;
+    /* Space for scrollbar */
+    justify-content: flex-start;
+    /* Align left to prevent centering issues when scrolling */
+    -webkit-overflow-scrolling: touch;
+    /* Smooth scrolling on iOS */
   }
 
   /* Product Card adjustments for 2-col */
@@ -284,6 +289,11 @@ nav a:hover {
     font-size: 16px !important;
     /* Prevents auto-zoom */
   }
+}
+
+/* Default state for mobile hero image (Hidden on Desktop) */
+.mobile-barista-hero {
+  display: none;
 }
 
 

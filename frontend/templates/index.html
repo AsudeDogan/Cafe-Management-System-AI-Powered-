@@ -2,11 +2,7 @@
 
 {% block content %}
 <div class="hero-wrapper">
-    <!-- Mobile Only Assets -->
-    <div class="mobile-hero-assets">
-        <img src="{{ url_for('static', filename='images/barista.png') }}" class="mobile-barista" alt="Barista">
-        <img src="{{ url_for('static', filename='images/heart.png') }}" class="mobile-heart" alt="Love">
-    </div>
+
 
     <!-- CENTER -->
     <div class="hero-center-text">
@@ -14,6 +10,9 @@
         <p>Best coffee in town with our new AI-powered recommendations!</p>
 
         <a href="/menu" class="btn-primary">See the Menu</a>
+
+        <!-- Mobile Only Barista Image (New Location) -->
+        <img src="{{ url_for('static', filename='images/barista.png') }}" class="mobile-barista-hero" alt="Barista">
     </div>
 </div>
 {% endblock %}
